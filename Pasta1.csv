@@ -1,0 +1,31 @@
+﻿Nome;Idade;ProdutoEscolhido;EmpresaContratante
+Entrada 1;Marcelo Silva;30;Marketing Cloud;Apple Inc.
+Entrada 2;Juliana Santos;21;Data Cloud;Google LLC
+Entrada 3;Rafael Oliveira;34;Net Zero Cloud;Microsoft Corporation
+Entrada 4;Camila Costa;64;Salesforce Platform;Amazon.com, Inc.
+Entrada 5;Bruno Pereira;23;Salesforce Customer Sucess;Facebook, Inc. (agora Meta Platforms, Inc.)
+Entrada 6;Larissa Rodrigues;45;IA;Tesla, Inc.
+Entrada 7;Lucas Souza;32;Sales Cloud;Coca-Cola Company
+Entrada 8;Amanda Almeida;65;Commerce Cloud;Walmart Inc.
+Entrada 9;Thiago Nunes;34;Marketing Cloud;Samsung Electronics Co., Ltd.
+Entrada 10;Isabela Barbosa;5;Data Cloud;Toyota Motor Corporation
+Entrada 11;Felipe Ribeiro;28;Net Zero Cloud;Nike, Inc.
+Entrada 12;Renata Ferreira;38;Salesforce Platform;McDonald's Corporation
+Entrada 13;Gabriel Cardoso;37;Salesforce Customer Sucess;Visa Inc.
+Entrada 14;Ana Paula Lima;42;Marketing Cloud;PepsiCo, Inc.
+Entrada 15;Diego Castro;44;Data Cloud;Johnson & Johnson
+Entrada 16;Bianca Oliveira;45;Net Zero Cloud;Berkshire Hathaway Inc.
+Entrada 17;Eduardo Santos;32;Salesforce Platform;Procter & Gamble Company
+Entrada 18;Fernanda Martins;65;Salesforce Customer Sucess;IBM (International Business Machines Corporation)
+Entrada 19;Lucas Pereira;34;Marketing Cloud;General Electric Company
+Entrada 20;Carolina Costa;59;Data Cloud;Alibaba Group Holding Limited
+Entrada 21;Gustavo Almeida;53;Net Zero Cloud;Netflix, Inc.
+Entrada 22;Marina Gonçalves;42;Marketing Cloud;Adobe Inc.
+Entrada 23;João Oliveira;33;Data Cloud;Uber Technologies, Inc.
+Entrada 24;Larissa Rodrigues;43;Net Zero Cloud;Airbnb, Inc.
+Entrada 25;Mateus Silva;30;Salesforce Platform;Intel Corporation
+Entrada 26;Amanda Santos;21;Salesforce Customer Sucess;LinkedIn Corporation (subsidiária da Microsoft)
+Entrada 27;Pedro Costa;34;Atendimento ao Cliente;Sony Corporation
+Entrada 28;Beatriz Lima;64;IA;Huawei Technologies Co., Ltd.
+Entrada 29;Rafaela Fernandes;23;Sales Cloud;Exxon Mobil Corporation
+Entrada 30;Daniel Souza;55;Commerce Cloud;Goldman Sachs Group, Inc.

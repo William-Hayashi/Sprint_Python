@@ -1,20 +1,59 @@
-import pickle
+
+import csv
+import os
+
+
+cadastro = {}
 
 sair = False
-# Função para salvar o dicionário em um arquivo
-def salvar_cadastro():
-    with open('cadastro.pkl', 'wb') as f:
-        pickle.dump(cadastro, f)
 
-# Função para carregar o dicionário de um arquivo
+def salvar_cadastro():
+    
+    csv_path = os.path.join(os.getcwd(), 'Pasta1.csv')
+    
+    
+    file_exists = os.path.isfile(csv_path)
+    
+    with open(csv_path, 'a', newline='', encoding='utf-8') as f:
+        writer = csv.DictWriter(f, fieldnames=['Nome', 'Idade', 'Produto', 'Empresa Contratante'], delimiter=';')
+        
+        if not file_exists:
+            writer.writeheader()
+        
+        for entrada in cadastro.values():
+            writer.writerow(entrada)
+    print("Dados salvos com sucesso no arquivo Pasta1.csv")
+
+
+
+
 def carregar_cadastro():
     global cadastro
     try:
-        with open('cadastro.pkl', 'rb') as f:
-            cadastro = pickle.load(f)
+        with open('Pasta1.csv', 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter=';')
+            for i, row in enumerate(reader, start=1):
+                cadastro[f"Entrada {i}"] = {
+                    'Nome': row['Nome'],
+                    'Idade': row['Idade'],
+                    'Produto': row['Produto'],
+                    'Empresa Contratante': row['Empresa Contratante']
+                }
     except FileNotFoundError:
         cadastro = {}
 
+def imprimir_cadastro_csv():
+    try:
+        with open('Pasta1.csv', 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f, delimiter=';')
+            print("--------------------------------------------------------------------")
+            print("| Nome                    | Idade | Produto                     | Empresa Contratante")
+            print("--------------------------------------------------------------------")
+            for row in reader:
+                print(f"| {row['Nome']:<15}   | {row['Idade']:<5} | {row['Produto']:<25}    | {row['Empresa Contratante']}")
+            print("--------------------------------------------------------------------")
+    except FileNotFoundError:
+        print("O arquivo cadastro.csv não foi encontrado.")
 
 def inicio():
     linha = "____________________________________________________________________\n"
@@ -61,6 +100,7 @@ def trabalhando_dados(escolha):
         repetir = input("Deseja fazer mais alguma ação? Sim ou Não: ")
         repetir = repetir.upper()
         if repetir == "SIM":
+            salvar_cadastro() 
             return inicio()
         else:
             print("Muito Obrigado pela preferência! Volte sempre")
@@ -71,8 +111,7 @@ def trabalhando_dados(escolha):
 
     #READ
     elif escolha == 2:
-        for key in cadastro:
-            print(f'{key}: {cadastro[key]}')
+        imprimir_cadastro_csv()
         repetir = input("Deseja fazer mais alguma ação? Sim ou Não: ")
         repetir = repetir.upper()
         if repetir == "SIM":
@@ -82,7 +121,6 @@ def trabalhando_dados(escolha):
             sair = True
             salvar_cadastro()
             SystemExit()
-
 
     # UPDATE
     elif escolha == 3:
@@ -101,6 +139,7 @@ def trabalhando_dados(escolha):
                 repetir = input("\nDeseja fazer mais alguma ação? Sim ou Não: ")
                 repetir = repetir.upper()
                 if repetir == "SIM":
+                    salvar_cadastro()
                     return inicio()
                 else:
                     print("\nMuito Obrigado pela preferência! Volte sempre")
@@ -120,6 +159,7 @@ def trabalhando_dados(escolha):
                 repetir = input("\nDeseja fazer mais alguma ação? Sim ou Não: ")
                 repetir = repetir.upper()
                 if repetir == "SIM":
+                    salvar_cadastro()
                     return inicio()
                 else:
                     print("\nMuito Obrigado pela preferência! Volte sempre")
@@ -140,6 +180,7 @@ def trabalhando_dados(escolha):
                 print("---------------------------------RESULTADO-----------------------------\nCadastro atualizado:", cadastro)
             except KeyError:
                 print("Entrada não encontrada! Tente novamente")
+                salvar_cadastro()
                 return inicio()
         repetir = input("Deseja fazer mais alguma ação? Sim ou Não: ")
         repetir = repetir.upper()
